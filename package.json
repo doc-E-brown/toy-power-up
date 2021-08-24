@@ -1,0 +1,15 @@
+{
+  "name": "toy-power-up",
+  "version": "0.1.0",
+  "description": "A toy Trello power up",
+  "source": "src/html/index.html",
+  "repository": "git@github.com:doc-E-brown/toy-power-up.git",
+  "author": "Ben Johnston",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build src/html/*.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
+  }
+}
