@@ -12,7 +12,7 @@ var btnCallback = function (t, opts) {
 window.TrelloPowerUp.initialize({
   'card-buttons': function (t, opts) {
     console.log("MSG");
-    console.log(JSON.stringify(t));
+    console.log(t);
     return [{
       icon: GRAY_ICON,
       text: 'Seach',
