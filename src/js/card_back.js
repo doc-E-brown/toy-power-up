@@ -12,7 +12,7 @@ window.TrelloPowerUp.initialize({
       title: 'My Card Back Section',
       icon: GRAY_ICON, // Must be a gray icon, colored icons not allowed.
       content: {
-        type: 'url',
+        type: 'iframe',
         url: 'https://developer.atlassian.com/cloud/trello/power-ups/capabilities/card-back-section/',
         height: 230, // Max height is 1500.
         action: {
