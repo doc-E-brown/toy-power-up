@@ -8,8 +8,8 @@ var onBtnClick = function (t, opts) {
 
 window.TrelloPowerUp.initialize({
   'card-back-section': function (t, options) {
-    // var absolute = window.TrelloPowerUp.util.relativeUrl('src/html/section.html');
-    // console.log(`Absolute path ${absolute}`);
+    var absolute = window.TrelloPowerUp.util.relativeUrl('section.html');
+    console.log(`Absolute path ${absolute}`);
     return {
       title: 'My Card Back Section',
       icon: GRAY_ICON, // Must be a gray icon, colored icons not allowed.
