@@ -13,7 +13,7 @@ window.TrelloPowerUp.initialize({
       icon: GRAY_ICON, // Must be a gray icon, colored icons not allowed.
       content: {
         type: 'iframe',
-        url: t.signUrl('./html/section.html'),
+        url: t.signUrl('./src/html/section.html'),
         height: 230, // Max height is 1500.
         action: {
           text: 'Card back Action',
