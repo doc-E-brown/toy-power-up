@@ -12,12 +12,12 @@ window.TrelloPowerUp.initialize({
       title: 'My Card Back Section',
       icon: GRAY_ICON, // Must be a gray icon, colored icons not allowed.
       content: {
-        type: 'iframe',
-        url: t.signUrl('./section.html'),
+        type: 'url',
+        url: 'https://developer.atlassian.com/cloud/trello/power-ups/capabilities/card-back-section/',
         height: 230, // Max height is 1500.
         action: {
-          text: 'My Action',
-          callback: (t) => t.popup({}),
+          text: 'Card back Action',
+          callback: function (t) { console.log(JSON.stringify(t)) },
         },
       }
     };
