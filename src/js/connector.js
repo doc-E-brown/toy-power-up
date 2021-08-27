@@ -1,39 +1,22 @@
-console.log("Hey");
-
 var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
 
+var btnCallback = function (t, opts) {
+  return t.popup({
+    title: 'Search Catalogue',
+    url: t.signUrl('section.html'),
+    args: { myArgs: 'You can access these with t.arg()' },
+    height: 278 // initial height, can be changed later
+  });
+};
+
 window.TrelloPowerUp.initialize({
-  'card-badges': function (t, ops) {
-    t.alert({
-      'message': 'Hey hey'
-    })
-
-
-    return t.card("all")
-      .then(function (card) {
-        console.log(card);
-        return [{
-          text: card.idShort
-        }];
-      })
-  },
-
-  'card-back-section': function (t, options) {
-    return {
-      title: 'My Card Back Section',
-      icon: GRAY_ICON, // Must be a gray icon, colored icons not allowed.
-      content: {
-        type: 'iframe',
-        url: t.signUrl('./html/section.html'),
-        height: 230, // Max height is 1500.
-        action: {
-          text: 'My Action',
-          callback: (t) => t.popup({
-            'title': 'Pop Up',
-            items: []
-          }),
-        },
-      }
-    };
+  'card-buttons': function (t, opts) {
+    console.log("MSG");
+    console.log(t);
+    return [{
+      icon: GRAY_ICON,
+      text: 'Seach',
+      callback: btnCallback
+    }];
   }
-})
+});

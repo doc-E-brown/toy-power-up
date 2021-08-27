@@ -1,22 +1,13 @@
-var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
+// const http = require('http');
+var sanitize = function (value) {
+  return value.replace(/ /g, '+').replace(/[^a-zA-Z0-9+]/g, '')
+}
 
-var btnCallback = function (t, opts) {
-  return t.popup({
-    title: 'Search Catalogue',
-    url: t.signUrl('section.html'),
-    args: { myArgs: 'You can access these with t.arg()' },
-    height: 278 // initial height, can be changed later
-  });
-};
+document.querySelector("#search").addEventListener('click', function () {
 
-window.TrelloPowerUp.initialize({
-  'card-buttons': function (t, opts) {
-    console.log("MSG");
-    console.log(t);
-    return [{
-      icon: GRAY_ICON,
-      text: 'Seach',
-      callback: btnCallback
-    }];
-  }
+  const title = sanitize(document.getElementById("title").value);
+  fetch('http://openlibrary.org/search.json?q=' + sanitize(title))
+    .then(response => response.json())
+    .then(data => console.log(data));
+
 });
